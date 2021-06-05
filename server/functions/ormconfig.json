@@ -1,0 +1,9 @@
+{
+   "type": "mssql",
+   "host": "ecommercerumi.database.windows.net",
+   "username": "ivanaimufua41@gmail.com@ecommercerumi",
+   "password": "24Kingswood@",
+   "database": "Ecommerce-Test",
+   "synchronize": true,
+   "logging": false
+}
