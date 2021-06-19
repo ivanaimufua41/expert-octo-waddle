@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import "reflect-metadata";
 import * as bodyParser from "body-parser";
 import { createConnection } from "typeorm";
@@ -7,9 +8,10 @@ import ProductRouter from './Data/ProductData/ProductRouter';
 const app = express();
 const main = express();
 
-// main.use("/api/v1", app);
-main.use(bodyParser.json());
-main.use(bodyParser.urlencoded({extended: false}));
+// main.use(app);
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 const PORT = 8000;
 
