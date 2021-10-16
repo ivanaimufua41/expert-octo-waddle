@@ -1,33 +1,21 @@
-import express from 'express';
-import cors from 'cors';
-import "reflect-metadata";
-import * as bodyParser from "body-parser";
-import { createConnection } from "typeorm";
-import { Product } from './Product/ProductData/ProductDTO';
-import ProductRouter from './Product/ProductData/ProductRouter';
+import * as dotenv from "dotenv";
+import express from "express";
+import cors from "cors";
+import helmet from "helmet";
+import { connectToDatabase, PORT } from './Connection/Connection';
+import ProductRouter from './Product/ProductRouter';
+
+require('dotenv').config
+
+// if (!process.env.PORT) {
+//    process.exit(1);
+// }
 const app = express();
-const main = express();
 
-// main.use(app);
+app.use(helmet());
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-
-const PORT = 8000;
+app.use(express.json());
 
 app.use('/api/products', ProductRouter);
 
-app.listen(PORT, () => {
-  createConnection({
-      type: "mssql",
-      port: 1433,
-      host: "ecommercerumi.database.windows.net",
-      username: "ivanaimufua41@gmail.com@ecommercerumi",
-      password: "24Kingswood@",
-      database: "Ecommerce-Test",
-      entities: [Product],
-    }).then(() => {
-      console.log('Connected to database successfully!');
-      console.log(`[server]: Server running at https://localhost:${PORT}`);
-    });
-});
+app.listen(PORT, () => connectToDatabase());

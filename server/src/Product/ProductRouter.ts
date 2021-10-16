@@ -1,6 +1,6 @@
 import express from 'express';
 import { getConnection } from "typeorm";
-import { Product } from './ProductDTO';
+import { Product } from '../Entities/ProductEntity';
 
 const router = express.Router();
 
