@@ -3,8 +3,8 @@ import cors from 'cors';
 import "reflect-metadata";
 import * as bodyParser from "body-parser";
 import { createConnection } from "typeorm";
-import { Product } from './Data/ProductData/ProductDTO';
-import ProductRouter from './Data/ProductData/ProductRouter';
+import { Product } from './Product/ProductData/ProductDTO';
+import ProductRouter from './Product/ProductData/ProductRouter';
 const app = express();
 const main = express();
 

@@ -5,7 +5,7 @@ import ProductListPage from '../Product/ProductListPage'
 const Routes = (): JSX.Element => {
     return (
         <Switch>
-            <Route exact path="/products" component={ProductListPage} />
+            <Route exact path="/" component={ProductListPage} />
         </Switch>
     )
 }
