@@ -1,0 +1,13 @@
+{
+      "type": "mssql",
+      "port": 1433,
+      "host": "DESKTOP-QNIMB58",
+      "username": "Ivan_Admin",
+      "password": "24password",
+      "database": "Ecommerce_web",
+      "entities": ["src/Entities/*"],
+      "extra": {
+        "validateConnection": false,
+        "trustServerCertificate": true
+      }
+}
